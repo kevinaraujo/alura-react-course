@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import Tabela from './Tabela';
+import Form from './Form';
 
 class App extends Component {
   state = {
@@ -45,11 +46,18 @@ class App extends Component {
     });
   }
 
+  saveListener = author => {
+    this.setState({
+      authors: [...this.state.authors, author]
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <Tabela authors={this.state.authors} removeAuthor = {this.removeAuthor} />
-      </div>
+      <Fragment>
+        <Tabela authors={this.state.authors} removeAuthor={this.removeAuthor} />
+        <Form saveListener={this.saveListener}/>
+      </Fragment>
     );
   }
 }
