@@ -34,19 +34,42 @@ class Form extends Component {
 
         return (
             <form>
-                <label htmlFor="name">Name</label>
-                <input id="name" type="text" name="name" value={name}
-                onChange={this.inputListener}/>
+                <div className="row">
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="name">Name</label>
+                        <input 
+                            className="validate"
+                            id="name" 
+                            type="text" 
+                            name="name" 
+                            value={name}
+                            onChange={this.inputListener}/>
+                    </div>
 
-                <label htmlFor="book">Book</label>
-                <input id="book" type="text" name="book" value={book}
-                onChange={this.inputListener}/>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="book">Book</label>
+                        <input 
+                            className="validate"
+                            id="book" 
+                            type="text" 
+                            name="book" 
+                            value={book}
+                            onChange={this.inputListener}/>
+                    </div>
 
-                <label htmlFor="price">Price</label>
-                <input id="price" type="text" name="price" value={price}
-                onChange={this.inputListener}/>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="price">Price</label>
+                        <input 
+                            className="validate"
+                            id="price"
+                            type="text" 
+                            name="price" 
+                            value={price}
+                            onChange={this.inputListener}/>
+                    </div>
+                </div>
 
-                <button type="button" onClick={this.formSubmit}>Save</button>
+                <button className="waves-effect waves-light indigo lighten-2 btn" type="button" onClick={this.formSubmit}>Save</button>
             </form>
         )    
     }

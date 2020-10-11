@@ -3,6 +3,7 @@ import './App.css';
 import 'materialize-css/dist/css/materialize.min.css'
 import Tabela from './Tabela';
 import Form from './Form';
+import Header from './Header'
 
 class App extends Component {
   state = {
@@ -56,8 +57,11 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Tabela authors={this.state.authors} removeAuthor={this.removeAuthor} />
-        <Form saveListener={this.saveListener}/>
+        <Header/>
+        <div className="container .mb-10">
+          <Tabela authors={this.state.authors} removeAuthor={this.removeAuthor} />
+          <Form saveListener={this.saveListener}/>
+        </div>
       </Fragment>
     );
   }
